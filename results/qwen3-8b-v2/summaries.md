@@ -1,0 +1,231 @@
+# Spike summaries
+
+## s02-screenconnect-backdoor  (Low, 7 alerts, 4.4s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 7
+First alert: 16:43 UTC on Sep 14, 2026
+Last alert: 16:43 UTC on Sep 14, 2026
+Home network device(s) involved: 10.9.14.101
+Outside address(es) involved: 184.194.97.23
+Outside port(s): 443
+Most important alert: ET REMOTE_ACCESS Observed DNS Query to Known ScreenConnect/ConnectWise Remote Desktop Service Domain (2x)
+All alert names (from Suricata, most important first): ET REMOTE_ACCESS Observed DNS Query to Known ScreenConnect/ConnectWise Remote Desktop Service Domain (2x); ET REMOTE_ACCESS Remote Monitoring and Management (RMM) Tool in DNS Lookup (screenconnect .com) (2x); ET REMOTE_ACCESS Remote Monitoring and Management (RMM) Tool in DNS Lookup (check .screenconnect .com) (1x); ET REMOTE_ACCESS Observed Remote Monitoring and Management (RMM) Tool in TLS SNI (screenconnect .com) (1x); ET REMOTE_ACCESS Observed Remote Monitoring and Management (RMM) Tool in TLS SNI (check .screenconnect .com) (1x)
+Severity: Low
+```
+
+**Model output**
+
+A low severity alert shows your home device 10.9.14.101 tried to connect to an outside address 184.194.97.23 on port 443. The device looked up domains linked to ScreenConnect, which is a remote desktop tool used by some companies to manage devices. This could mean someone tried to access your device remotely. You should run a malware scan on the device to check for any issues.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 5.1
+
+## s03-xworm  (Medium, 1 alerts, 3.8s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 1
+First alert: 18:47 UTC on Sep 8, 2026
+Last alert: 18:47 UTC on Sep 8, 2026
+Home network device(s) involved: 10.9.8.128
+Outside address(es) involved: 43.228.157.141
+Outside port(s): 7007
+Most important alert: ET DROP Spamhaus DROP Listed Traffic Inbound group 5 (1x)
+All alert names (from Suricata, most important first): ET DROP Spamhaus DROP Listed Traffic Inbound group 5 (1x)
+Severity: Medium
+```
+
+**Model output**
+
+A medium severity alert was triggered on your home network. The device with the IP address 10.9.8.128 talked to the outside address 43.228.157.141 on port 7007. The alert is about traffic from a known spam source. You should disconnect the device from Wi-Fi to stop the communication.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 4.0
+
+## s04-lumma-stealer  (High, 18 alerts, 4.0s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 18
+First alert: 19:18 UTC on Aug 10, 2026
+Last alert: 19:24 UTC on Aug 10, 2026
+Home network device(s) involved: 172.16.1.101
+Outside address(es) involved: 31.216.144.5
+Outside port(s): 443
+Most important alert: ET MALWARE Win32/Lumma Stealer Related CnC Domain in DNS Lookup (futupath .cyou) (9x)
+All alert names (from Suricata, most important first): ET MALWARE Win32/Lumma Stealer Related CnC Domain in DNS Lookup (futupath .cyou) (9x); ET FILE_SHARING Observed DNS Query to Filesharing Service (mega .co .nz) (5x); ET FILE_SHARING File Sharing Related Domain in DNS Lookup (mega .nz) (2x); ET FILE_SHARING File Sharing Domain Observed in TLS SNI (mega .nz) (2x)
+Severity: High
+```
+
+**Model output**
+
+A high severity security incident happened on your home network. The device 172.16.1.101 talked to the outside address 31.216.144.5 on port 443. The most important alert was about a malware called Lumma, which is used to steal information from computers. You should disconnect the device from Wi-Fi to stop the activity.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 5.4
+
+## s05-remcos-rat  (High, 17 alerts, 3.9s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 17
+First alert: 22:01 UTC on Aug 5, 2026
+Last alert: 22:32 UTC on Aug 5, 2026
+Home network device(s) involved: 10.8.6.101
+Outside address(es) involved: 185.14.92.102
+Outside port(s): 443
+Most important alert: ET MALWARE Remcos 3.x Unencrypted Server Response (16x)
+All alert names (from Suricata, most important first): ET MALWARE Remcos 3.x Unencrypted Server Response (16x); ET MALWARE Remcos 3.x Unencrypted Checkin (1x)
+Severity: High
+```
+
+**Model output**
+
+A high severity alert was triggered on your home network. The device 10.8.6.101 talked to the outside address 185.14.92.102 on port 443. The alert is related to Remcos, which is a type of malware used to control a computer remotely. You should disconnect the device from Wi-Fi to stop the communication.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 5.4
+
+## s06-xloader-formbook  (Medium, 70 alerts, 4.5s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 70
+First alert: 15:09 UTC on Apr 13, 2026
+Last alert: 15:28 UTC on Apr 13, 2026
+Home network device(s) involved: 10.4.13.101
+Outside address(es) involved: 66.29.152.174, 104.21.62.145, 172.67.211.213, 8.217.99.246
+Outside port(s): 80
+Most important alert: SURICATA HTTP Response excessive header repetition (44x)
+All alert names (from Suricata, most important first): SURICATA HTTP Response excessive header repetition (44x); ET INFO HTTP Request to Suspicious *.life Domain (21x); SURICATA STREAM excessive retransmissions (2x); SURICATA HTTP Unexpected Request body (2x); ET INFO Observed DNS Query to .life TLD (1x)
+Severity: Medium
+```
+
+**Model output**
+
+Your home network had a security issue with the device at 10.4.13.101. It talked to several outside addresses, including 66.29.152.174, and sent many HTTP requests. The most important alert was about repeated headers in HTTP responses, which is a sign of possible bad activity. The severity is Medium. This could mean someone tried to trick your device or send bad data. You should run a malware scan on the device to check for problems.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 6.2
+
+## s07-guloader-agenttesla  (High, 5 alerts, 4.4s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 5
+First alert: 11:13 UTC on Feb 3, 2026
+Last alert: 11:14 UTC on Feb 3, 2026
+Home network device(s) involved: 10.2.3.101
+Outside address(es) involved: 162.241.123.75, 208.95.112.1
+Outside port(s): 80, 47037, 21
+Most important alert: ET MALWARE Common Stealer Behavior - Source IP Associated with Hosting Provider Check via ip.api .com (1x)
+All alert names (from Suricata, most important first): ET MALWARE Common Stealer Behavior - Source IP Associated with Hosting Provider Check via ip.api .com (1x); ET MALWARE Agent Tesla CnC Exfil via TCP (1x); ET MALWARE AgentTesla Exfil via FTP (1x); ET INFO External IP Lookup Domain in DNS Lookup (ip-api .com) (1x); ET INFO External IP Lookup ip-api.com (1x)
+Severity: High
+```
+
+**Model output**
+
+A high severity security incident happened on your home network. The device 10.2.3.101 talked to the outside address 162.241.123.75 and 208.95.112.1. The most important alert was about a malware called Agent Tesla, which is used to steal information from computers. The device tried to send stolen data using TCP and FTP. You should disconnect the device from Wi-Fi to stop the activity.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 5.6
+
+## s08-kongtuke-mintsloader  (High, 32 alerts, 4.6s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 32
+First alert: 12:49 UTC on Feb 2, 2026
+Last alert: 12:51 UTC on Feb 2, 2026
+Home network device(s) involved: 10.2.2.37
+Outside address(es) involved: 216.245.184.175, 64.52.80.153, 173.232.146.62, 85.137.253.64
+Outside port(s): 80, 3456, 443, 25658
+Most important alert: ET EXPLOIT_KIT LandUpdate808 Domain in DNS Lookup (soulversr .com) (2x)
+All alert names (from Suricata, most important first): ET EXPLOIT_KIT LandUpdate808 Domain in DNS Lookup (soulversr .com) (2x); ET EXPLOIT_KIT LandUpdate808 Domain (soulversr .com) in TLS SNI (2x); ET MALWARE PureRAT SSL Cert (2x); ET MALWARE JS/FatturaPDF CnC Checkin (GET) (1x); ET HUNTING PowerShell Hidden Window Command Common In Powershell Stagers M1 (1x); ET INFO Windows Powershell User-Agent Usage (4x)
+Severity: High
+```
+
+**Model output**
+
+A high severity issue happened on your home network. The device 10.2.2.37 talked to several outside addresses, including 216.245.184.175. One alert was about a tool called PureRAT, which is used to control a computer remotely. Another alert was about a malware called JS/FatturaPDF, which communicates with a command and control server. You should disconnect the device 10.2.2.37 from Wi-Fi to stop the activity.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 6.8
+
+## s09-phantomstealer  (High, 4 alerts, 4.4s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 4
+First alert: 15:21 UTC on Jan 30, 2026
+Last alert: 15:21 UTC on Jan 30, 2026
+Home network device(s) involved: 10.1.30.101
+Outside address(es) involved: 185.27.134.154, 104.16.185.241
+Outside port(s): 80
+Most important alert: ET MALWARE Reverse Base64 Encoded MZ Header Payload Inbound (1x)
+All alert names (from Suricata, most important first): ET MALWARE Reverse Base64 Encoded MZ Header Payload Inbound (1x); ET INFO Observed UA-CPU Header (1x); ET INFO External IP Lookup Domain in DNS Lookup (icanhazip .com) (1x); ET INFO IP Check Domain (icanhazip. com in HTTP Host) (1x)
+Severity: High
+```
+
+**Model output**
+
+A high severity alert was triggered on your home network. The device 10.1.30.101 talked to the outside address 185.27.134.154 and 104.16.185.241 on port 80. The most important alert was about malware trying to send encoded data. This could mean someone is trying to control your device or steal information. You should disconnect the device from Wi-Fi right away.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 3.8
+
+## s10-njrat-masslogger  (High, 16 alerts, 5.2s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 16
+First alert: 22:03 UTC on Jan 28, 2026
+Last alert: 22:05 UTC on Jan 28, 2026
+Home network device(s) involved: 10.1.29.101
+Outside address(es) involved: 104.248.130.195, 149.154.166.110, 193.122.130.0, 104.21.67.152
+Outside port(s): 80, 443, 7492
+Most important alert: ET MALWARE Generic njRAT/Bladabindi CnC Activity (ll) (1x)
+All alert names (from Suricata, most important first): ET MALWARE Generic njRAT/Bladabindi CnC Activity (ll) (1x); ET HUNTING Telegram API Domain in DNS Lookup (1x); ET HUNTING Observed Telegram API Domain (api .telegram .org in TLS SNI) (1x); ET INFO External IP Lookup - checkip.dyndns.org (3x); ET INFO External IP Lookup Domain in DNS Lookup (ip-api .com) (1x); ET INFO External IP Lookup ip-api.com (1x)
+Severity: High
+```
+
+**Model output**
+
+A high severity alert happened on your home network. The device 10.1.29.101 talked to outside addresses 104.248.130.195, 149.154.166.110, 193.122.130.0, and 104.21.67.152. The most important alert was about njRAT, which is a type of malware used to control devices remotely. You should disconnect the device 10.1.29.101 from Wi-Fi to stop any further activity.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 3.8
+
+## spare-vip-recovery  (High, 21 alerts, 4.7s)
+
+**Facts given to the model**
+
+```
+Number of alerts: 21
+First alert: 23:47 UTC on Jan 19, 2026
+Last alert: 23:47 UTC on Jan 19, 2026
+Home network device(s) involved: 10.1.14.131
+Outside address(es) involved: 149.154.166.110, 91.92.243.152, 193.122.6.168, 104.21.67.152
+Outside port(s): 80, 443
+Most important alert: ET HUNTING Telegram API Domain in DNS Lookup (1x)
+All alert names (from Suricata, most important first): ET HUNTING Telegram API Domain in DNS Lookup (1x); ET HUNTING Observed Telegram API Domain (api .telegram .org in TLS SNI) (1x); ET HUNTING Telegram API Certificate Observed (1x); ET MALWARE Reverse Base64 Encoded MZ Header Payload Inbound (1x); ET INFO External IP Lookup - checkip.dyndns.org (10x); ET DYN_DNS External IP Lookup Domain in DNS Query (checkip .dyndns .org) (1x)
+Severity: High
+```
+
+**Model output**
+
+A high severity alert happened on your home network. The device 10.1.14.131 talked to several outside addresses, including 149.154.166.110, using ports 80 and 443. One alert was about a Telegram API domain being checked, which is used by apps to send messages. Another alert mentioned a possible malware trying to send encoded data. You should disconnect the device 10.1.14.131 from Wi-Fi to stop any further activity.
+
+**Indicator check:** pass  
+**Flesch-Kincaid grade:** 5.3

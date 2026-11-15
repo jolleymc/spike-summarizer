@@ -1,0 +1,2 @@
+This is Suricata version 8.0.8 RELEASE
+Rules loaded: 53494
